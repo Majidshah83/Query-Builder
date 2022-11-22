@@ -84,5 +84,8 @@ DB::table('student')->where('id',2)->updateOrInsert([
   'marks'=>50,
   'pass_date'=>'2024-11-12'
 ]);
+//delete
+$result=DB::table('student')->where('id','<',15)->delete();
+dd($result);
 }
 }
