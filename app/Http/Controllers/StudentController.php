@@ -46,8 +46,12 @@ class StudentController extends Controller
 
         //Select Method
 
-        // $result=DB::table('student')->where('marks','>',700)->select('name','email')->get();
+        $result=DB::table('student')->where('marks','>',700)->select('name','email')->get();
         $result=DB::table('student')->where('name', 'like','m%')->select('name')->get();
+        $result=DB::table('student')->where('id','1')->orWhere('name','majid')->get();
+
+//between or where between
+        $result=DB::table('student')->whereBetween('id',[1,5])->orWhereBetween('marks',[700,900])->get();
 
         dd($result);
 
