@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\JoinController;
+use Illuminate\Database\Query\JoinClause;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,3 +16,4 @@ use App\Http\Controllers\StudentController;
 |
 */
 route::get('getstudent',[StudentController::class,'getstudent']);
+route::get('getjoin',[JoinController::class,'join']);
