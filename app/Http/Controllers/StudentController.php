@@ -46,7 +46,8 @@ class StudentController extends Controller
 
         //Select Method
 
-        $result=DB::table('student')->where('marks','>',700)->select('name','email')->get();
+        // $result=DB::table('student')->where('marks','>',700)->select('name','email')->get();
+        $result=DB::table('student')->where('name', 'like','m%')->select('name')->get();
 
         dd($result);
 
