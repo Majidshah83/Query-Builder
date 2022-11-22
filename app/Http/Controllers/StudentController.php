@@ -10,7 +10,11 @@ class StudentController extends Controller
     {
         //Retriviving All Rows From table
         $result=DB::table('student')->get();
+
+
+
         // Retriviving single and multiple row/column from table
+
         $result=DB::table('student')->where('city','mardan')->get();
         $result=DB::table('student')->where('id','>',2)->get();
         $result=DB::table('student')->where('id','>',2)->first();
@@ -31,6 +35,19 @@ class StudentController extends Controller
         }
         return false;
         });
+
+
+        //aggregates function
+        $result=DB::table('student')->where('id','>',3)->count();
+        $result=DB::table('student')->max('marks');
+        $result=DB::table('student')->avg('marks');
+        $result=DB::table('student')->min('marks');
+
+
+
+        dd($result);
+
+
 
 
      }
