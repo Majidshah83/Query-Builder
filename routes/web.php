@@ -17,3 +17,4 @@ use Illuminate\Database\Query\JoinClause;
 */
 route::get('getstudent',[StudentController::class,'getstudent']);
 route::get('getjoin',[JoinController::class,'join']);
+route::get('leftJoin',[JoinController::class,'leftJoin']);

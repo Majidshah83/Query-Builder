@@ -12,4 +12,10 @@ class JoinController extends Controller
         )->get();
         return $result;
     }
+    public function leftJoin()
+    {
+        $result=Db::table('users')->leftJoin('users_verify','users.id','=','users_verify.user_id')->get();
+        return $result;
+
+    }
 }
