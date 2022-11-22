@@ -72,6 +72,17 @@ $result=DB::table('student')->insert([
   'marks'=>30,
   'pass_date'=>'2021-11-12'
 ]);
-
+//update
+DB::table('student')->where('id',2)->update([
+    'name'=>'khalid'
+]);
+//update or insert
+DB::table('student')->where('id',2)->updateOrInsert([
+   'name'=>'SADAM',
+  'email'=>'sADAM50@gmail.com',
+  'city'=>'KATLANG',
+  'marks'=>50,
+  'pass_date'=>'2024-11-12'
+]);
 }
 }
