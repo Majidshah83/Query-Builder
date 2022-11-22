@@ -64,6 +64,14 @@ $result=DB::table('student')->orderBy('marks','asc')->get();
 $result=DB::table('student')->orderBy('marks','desc')->get();
          dd($result);
 
+//insert
+$result=DB::table('student')->insert([
+  'name'=>'adnan',
+  'email'=>'shahmajid50@gmail.com',
+  'city'=>'mardan',
+  'marks'=>30,
+  'pass_date'=>'2021-11-12'
+]);
 
-     }
+}
 }
