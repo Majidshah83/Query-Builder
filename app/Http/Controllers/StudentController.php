@@ -44,6 +44,9 @@ class StudentController extends Controller
         $result=DB::table('student')->min('marks');
 
 
+        //Select Method
+
+        $result=DB::table('student')->where('marks','>',700)->select('name','email')->get();
 
         dd($result);
 
