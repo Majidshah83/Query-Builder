@@ -53,11 +53,15 @@ class StudentController extends Controller
 //between or where between
         $result=DB::table('student')->whereBetween('id',[1,5])->orWhereBetween('marks',[700,900])->get();
 
-        
+
 
 // where date month day
    $result=DB::table('student')->whereDate('pass_date','2021-11-12')->orWhereMonth('pass_date',
    '11')->get();
+
+//order by
+$result=DB::table('student')->orderBy('marks','asc')->get();
+$result=DB::table('student')->orderBy('marks','desc')->get();
          dd($result);
 
 
