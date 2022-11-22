@@ -18,6 +18,20 @@ class StudentController extends Controller
         $result=DB::table('student')->where('marks','>',370)->pluck('name');
         $result=DB::table('student')->where('marks','>',370)->value('name');
 
-        return $result;
+
+        //chuncking laravel
+        DB::table('student')->orderBy('id')->chunk(2,function($students){
+        echo "chunkcing data";
+        echo '<br>';
+        foreach($students as $std)
+        {
+            echo $std->name;
+            echo '<br>';
+
+        }
+        return false;
+        });
+
+
      }
 }
